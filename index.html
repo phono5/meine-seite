@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Meine Testseite</title>
+</head>
+<body>
+  <h1>Hallo PostHog!</h1>
+  <p>Das ist meine Testseite.</p>
+  <button onclick="trackClick()">Klick mich</button>
+
+  <script>
+    function trackClick() {
+      posthog.capture('button_geklickt', {
+        seite: 'startseite'
+      });
+      alert('Event wurde an PostHog gesendet!');
+    }
+  </script>
+</body>
+</html>
